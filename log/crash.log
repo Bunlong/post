@@ -1,0 +1,209 @@
+2015-01-09 08:27:22 =ERROR REPORT====
+GET /post/index [post] 404 0ms2015-01-09 08:53:59 =ERROR REPORT====
+GET /comments/delete [post] 404 0ms2015-01-09 09:07:29 =ERROR REPORT====
+** Generic server <0.101.0> terminating 
+** Last message in was {delete,undefined}
+** When Server state == {state,connected,1,undefined,[{name,{local,boss_db_pool}},{worker_module,boss_db_controller},{size,5},{max_overflow,10},{adapter,mock},{cache_enable,false},{cache_prefix,db},{shards,[[{db_host,"localhost"},{db_adapter,mysql},{db_port,3306},{db_username,"root"},{db_password,"Q1p2m3g4"},{db_database,"post"},{db_shard_id,post},{db_shard_models,[comment]}]]},{is_master_node,true},{db_host,"localhost"},{db_port,1978}],boss_db_adapter_mock,undefined,undefined,[{boss_db_adapter_mysql,<0.106.0>,<0.106.0>}],{dict,1,16,16,8,80,48,{[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]},{{[],[],[],[],[[comment|0]],[],[],[],[],[],[],[],[],[],[],[]}}},false,60,db,0}
+** Reason for termination == 
+** {function_clause,[{boss_db_controller,infer_type_from_id,[undefined],[{file,"src/boss_db_controller.erl"},{line,418}]},{boss_db_controller,db_for_key,2,[{file,"src/boss_db_controller.erl"},{line,405}]},{boss_db_controller,handle_call,3,[{file,"src/boss_db_controller.erl"},{line,153}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,607}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,639}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,237}]}]}
+2015-01-09 09:07:29 =CRASH REPORT====
+  crasher:
+    initial call: boss_db_controller:init/1
+    pid: <0.101.0>
+    registered_name: []
+    exception exit: {{function_clause,[{boss_db_controller,infer_type_from_id,[undefined],[{file,"src/boss_db_controller.erl"},{line,418}]},{boss_db_controller,db_for_key,2,[{file,"src/boss_db_controller.erl"},{line,405}]},{boss_db_controller,handle_call,3,[{file,"src/boss_db_controller.erl"},{line,153}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,607}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,639}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,237}]}]},[{gen_server,terminate,7,[{file,"gen_server.erl"},{line,804}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,237}]}]}
+    ancestors: [<0.100.0>,boss_db_pool,boss_db_sup,boss_web,boss_sup,<0.93.0>]
+    messages: []
+    links: [<0.100.0>,<0.106.0>,<0.99.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 4185
+    stack_size: 27
+    reductions: 14063
+  neighbours:
+    neighbour: [{pid,<0.111.0>},{registered_name,[]},{initial_call,{erlang,apply,2}},{current_function,{mysql_recv,loop,1}},{ancestors,[]},{messages,[]},{links,[<0.106.0>,#Port<0.29791>]},{dictionary,[]},{trap_exit,false},{status,waiting},{heap_size,610},{stack_size,6},{reductions,4891}]
+    neighbour: [{pid,<0.106.0>},{registered_name,[]},{initial_call,{erlang,apply,2}},{current_function,{mysql_conn,loop,1}},{ancestors,[]},{messages,[]},{links,[<0.101.0>,<0.111.0>]},{dictionary,[]},{trap_exit,false},{status,waiting},{heap_size,1598},{stack_size,4},{reductions,10693}]
+2015-01-09 09:07:29 =SUPERVISOR REPORT====
+     Supervisor: {<0.100.0>,poolboy_sup}
+     Context:    child_terminated
+     Reason:     {function_clause,[{boss_db_controller,infer_type_from_id,[undefined],[{file,"src/boss_db_controller.erl"},{line,418}]},{boss_db_controller,db_for_key,2,[{file,"src/boss_db_controller.erl"},{line,405}]},{boss_db_controller,handle_call,3,[{file,"src/boss_db_controller.erl"},{line,153}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,607}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,639}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,237}]}]}
+     Offender:   [{pid,<0.101.0>},{name,boss_db_controller},{mfargs,{boss_db_controller,start_link,undefined}},{restart_type,temporary},{shutdown,5000},{child_type,worker}]
+
+2015-01-09 09:07:37 =ERROR REPORT====
+** Generic server <0.103.0> terminating 
+** Last message in was {delete,undefined}
+** When Server state == {state,connected,1,undefined,[{name,{local,boss_db_pool}},{worker_module,boss_db_controller},{size,5},{max_overflow,10},{adapter,mock},{cache_enable,false},{cache_prefix,db},{shards,[[{db_host,"localhost"},{db_adapter,mysql},{db_port,3306},{db_username,"root"},{db_password,"Q1p2m3g4"},{db_database,"post"},{db_shard_id,post},{db_shard_models,[comment]}]]},{is_master_node,true},{db_host,"localhost"},{db_port,1978}],boss_db_adapter_mock,undefined,undefined,[{boss_db_adapter_mysql,<0.108.0>,<0.108.0>}],{dict,1,16,16,8,80,48,{[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]},{{[],[],[],[],[[comment|0]],[],[],[],[],[],[],[],[],[],[],[]}}},false,60,db,0}
+** Reason for termination == 
+** {function_clause,[{boss_db_controller,infer_type_from_id,[undefined],[{file,"src/boss_db_controller.erl"},{line,418}]},{boss_db_controller,db_for_key,2,[{file,"src/boss_db_controller.erl"},{line,405}]},{boss_db_controller,handle_call,3,[{file,"src/boss_db_controller.erl"},{line,153}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,607}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,639}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,237}]}]}
+2015-01-09 09:07:37 =CRASH REPORT====
+  crasher:
+    initial call: boss_db_controller:init/1
+    pid: <0.103.0>
+    registered_name: []
+    exception exit: {{function_clause,[{boss_db_controller,infer_type_from_id,[undefined],[{file,"src/boss_db_controller.erl"},{line,418}]},{boss_db_controller,db_for_key,2,[{file,"src/boss_db_controller.erl"},{line,405}]},{boss_db_controller,handle_call,3,[{file,"src/boss_db_controller.erl"},{line,153}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,607}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,639}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,237}]}]},[{gen_server,terminate,7,[{file,"gen_server.erl"},{line,804}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,237}]}]}
+    ancestors: [<0.100.0>,boss_db_pool,boss_db_sup,boss_web,boss_sup,<0.93.0>]
+    messages: []
+    links: [<0.100.0>,<0.108.0>,<0.99.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 4185
+    stack_size: 27
+    reductions: 17672
+  neighbours:
+    neighbour: [{pid,<0.113.0>},{registered_name,[]},{initial_call,{erlang,apply,2}},{current_function,{mysql_recv,loop,1}},{ancestors,[]},{messages,[]},{links,[<0.108.0>,#Port<0.29789>]},{dictionary,[]},{trap_exit,false},{status,waiting},{heap_size,610},{stack_size,6},{reductions,3372}]
+    neighbour: [{pid,<0.108.0>},{registered_name,[]},{initial_call,{erlang,apply,2}},{current_function,{mysql_conn,loop,1}},{ancestors,[]},{messages,[]},{links,[<0.103.0>,<0.113.0>]},{dictionary,[]},{trap_exit,false},{status,waiting},{heap_size,1598},{stack_size,4},{reductions,12412}]
+2015-01-09 09:07:37 =SUPERVISOR REPORT====
+     Supervisor: {<0.100.0>,poolboy_sup}
+     Context:    child_terminated
+     Reason:     {function_clause,[{boss_db_controller,infer_type_from_id,[undefined],[{file,"src/boss_db_controller.erl"},{line,418}]},{boss_db_controller,db_for_key,2,[{file,"src/boss_db_controller.erl"},{line,405}]},{boss_db_controller,handle_call,3,[{file,"src/boss_db_controller.erl"},{line,153}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,607}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,639}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,237}]}]}
+     Offender:   [{pid,<0.103.0>},{name,boss_db_controller},{mfargs,{boss_db_controller,start_link,undefined}},{restart_type,temporary},{shutdown,5000},{child_type,worker}]
+
+2015-01-09 09:09:08 =ERROR REPORT====
+** Generic server <0.383.0> terminating 
+** Last message in was {delete,undefined}
+** When Server state == {state,connected,1,undefined,[{name,{local,boss_db_pool}},{worker_module,boss_db_controller},{size,5},{max_overflow,10},{adapter,mock},{cache_enable,false},{cache_prefix,db},{shards,[[{db_host,"localhost"},{db_adapter,mysql},{db_port,3306},{db_username,"root"},{db_password,"Q1p2m3g4"},{db_database,"post"},{db_shard_id,post},{db_shard_models,[comment]}]]},{is_master_node,true},{db_host,"localhost"},{db_port,1978}],boss_db_adapter_mock,undefined,undefined,[{boss_db_adapter_mysql,<0.384.0>,<0.384.0>}],{dict,1,16,16,8,80,48,{[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]},{{[],[],[],[],[[comment|0]],[],[],[],[],[],[],[],[],[],[],[]}}},false,60,db,0}
+** Reason for termination == 
+** {function_clause,[{boss_db_controller,infer_type_from_id,[undefined],[{file,"src/boss_db_controller.erl"},{line,418}]},{boss_db_controller,db_for_key,2,[{file,"src/boss_db_controller.erl"},{line,405}]},{boss_db_controller,handle_call,3,[{file,"src/boss_db_controller.erl"},{line,153}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,607}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,639}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,237}]}]}
+2015-01-09 09:09:08 =CRASH REPORT====
+  crasher:
+    initial call: boss_db_controller:init/1
+    pid: <0.383.0>
+    registered_name: []
+    exception exit: {{function_clause,[{boss_db_controller,infer_type_from_id,[undefined],[{file,"src/boss_db_controller.erl"},{line,418}]},{boss_db_controller,db_for_key,2,[{file,"src/boss_db_controller.erl"},{line,405}]},{boss_db_controller,handle_call,3,[{file,"src/boss_db_controller.erl"},{line,153}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,607}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,639}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,237}]}]},[{gen_server,terminate,7,[{file,"gen_server.erl"},{line,804}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,237}]}]}
+    ancestors: [<0.100.0>,boss_db_pool,boss_db_sup,boss_web,boss_sup,<0.93.0>]
+    messages: []
+    links: [<0.100.0>,<0.384.0>,<0.99.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 987
+    stack_size: 27
+    reductions: 387
+  neighbours:
+    neighbour: [{pid,<0.385.0>},{registered_name,[]},{initial_call,{erlang,apply,2}},{current_function,{mysql_recv,loop,1}},{ancestors,[]},{messages,[]},{links,[<0.384.0>,#Port<0.54936>]},{dictionary,[]},{trap_exit,false},{status,waiting},{heap_size,376},{stack_size,6},{reductions,376}]
+    neighbour: [{pid,<0.384.0>},{registered_name,[]},{initial_call,{erlang,apply,2}},{current_function,{mysql_conn,loop,1}},{ancestors,[]},{messages,[]},{links,[<0.383.0>,<0.385.0>]},{dictionary,[]},{trap_exit,false},{status,waiting},{heap_size,610},{stack_size,4},{reductions,273}]
+2015-01-09 09:09:08 =SUPERVISOR REPORT====
+     Supervisor: {<0.100.0>,poolboy_sup}
+     Context:    child_terminated
+     Reason:     {function_clause,[{boss_db_controller,infer_type_from_id,[undefined],[{file,"src/boss_db_controller.erl"},{line,418}]},{boss_db_controller,db_for_key,2,[{file,"src/boss_db_controller.erl"},{line,405}]},{boss_db_controller,handle_call,3,[{file,"src/boss_db_controller.erl"},{line,153}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,607}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,639}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,237}]}]}
+     Offender:   [{pid,<0.383.0>},{name,boss_db_controller},{mfargs,{boss_db_controller,start_link,undefined}},{restart_type,temporary},{shutdown,5000},{child_type,worker}]
+
+2015-01-09 09:18:02 =SUPERVISOR REPORT====
+     Supervisor: {<0.122.0>,poolboy_sup}
+     Context:    shutdown_error
+     Reason:     shutdown
+     Offender:   [{nb_children,5},{name,boss_session_controller},{mfargs,{boss_session_controller,start_link,[[{name,{local,boss_session_pool}},{worker_module,boss_session_controller},{size,20},{max_overflow,40},{adapter,boss_session_adapter_mock},{session_exp_time,525600},{session_key,"_boss_session"}]]}},{restart_type,temporary},{shutdown,5000},{child_type,worker}]
+
+2015-01-09 13:48:55 =ERROR REPORT====
+** Generic server <0.102.0> terminating 
+** Last message in was {delete,undefined}
+** When Server state == {state,connected,1,undefined,[{name,{local,boss_db_pool}},{worker_module,boss_db_controller},{size,5},{max_overflow,10},{adapter,mock},{cache_enable,false},{cache_prefix,db},{shards,[[{db_host,"localhost"},{db_adapter,mysql},{db_port,3306},{db_username,"root"},{db_password,"Q1p2m3g4"},{db_database,"post"},{db_shard_id,post},{db_shard_models,[comment]}]]},{is_master_node,true},{db_host,"localhost"},{db_port,1978}],boss_db_adapter_mock,undefined,undefined,[{boss_db_adapter_mysql,<0.107.0>,<0.107.0>}],{dict,1,16,16,8,80,48,{[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]},{{[],[],[],[],[[comment|0]],[],[],[],[],[],[],[],[],[],[],[]}}},false,60,db,0}
+** Reason for termination == 
+** {function_clause,[{boss_db_controller,infer_type_from_id,[undefined],[{file,"src/boss_db_controller.erl"},{line,418}]},{boss_db_controller,db_for_key,2,[{file,"src/boss_db_controller.erl"},{line,405}]},{boss_db_controller,handle_call,3,[{file,"src/boss_db_controller.erl"},{line,153}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,607}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,639}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,237}]}]}
+2015-01-09 13:48:55 =CRASH REPORT====
+  crasher:
+    initial call: boss_db_controller:init/1
+    pid: <0.102.0>
+    registered_name: []
+    exception exit: {{function_clause,[{boss_db_controller,infer_type_from_id,[undefined],[{file,"src/boss_db_controller.erl"},{line,418}]},{boss_db_controller,db_for_key,2,[{file,"src/boss_db_controller.erl"},{line,405}]},{boss_db_controller,handle_call,3,[{file,"src/boss_db_controller.erl"},{line,153}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,607}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,639}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,237}]}]},[{gen_server,terminate,7,[{file,"gen_server.erl"},{line,804}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,237}]}]}
+    ancestors: [<0.100.0>,boss_db_pool,boss_db_sup,boss_web,boss_sup,<0.93.0>]
+    messages: []
+    links: [<0.100.0>,<0.107.0>,<0.99.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 987
+    stack_size: 27
+    reductions: 374
+  neighbours:
+    neighbour: [{pid,<0.112.0>},{registered_name,[]},{initial_call,{erlang,apply,2}},{current_function,{mysql_recv,loop,1}},{ancestors,[]},{messages,[]},{links,[<0.107.0>,#Port<0.29775>]},{dictionary,[]},{trap_exit,false},{status,waiting},{heap_size,376},{stack_size,6},{reductions,364}]
+    neighbour: [{pid,<0.107.0>},{registered_name,[]},{initial_call,{erlang,apply,2}},{current_function,{mysql_conn,loop,1}},{ancestors,[]},{messages,[]},{links,[<0.102.0>,<0.112.0>]},{dictionary,[]},{trap_exit,false},{status,waiting},{heap_size,233},{stack_size,4},{reductions,305}]
+2015-01-09 13:48:55 =SUPERVISOR REPORT====
+     Supervisor: {<0.100.0>,poolboy_sup}
+     Context:    child_terminated
+     Reason:     {function_clause,[{boss_db_controller,infer_type_from_id,[undefined],[{file,"src/boss_db_controller.erl"},{line,418}]},{boss_db_controller,db_for_key,2,[{file,"src/boss_db_controller.erl"},{line,405}]},{boss_db_controller,handle_call,3,[{file,"src/boss_db_controller.erl"},{line,153}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,607}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,639}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,237}]}]}
+     Offender:   [{pid,<0.102.0>},{name,boss_db_controller},{mfargs,{boss_db_controller,start_link,undefined}},{restart_type,temporary},{shutdown,5000},{child_type,worker}]
+
+2015-01-09 13:58:30 =ERROR REPORT====
+POST /comments/delete [post] 404 0ms2015-01-09 14:01:48 =ERROR REPORT====
+POST /comments/delete [post] 404 0ms2015-01-09 14:03:12 =ERROR REPORT====
+POST /comments/delete [post] 404 0ms2015-01-09 14:05:28 =ERROR REPORT====
+POST /comments/delete [post] 404 0ms2015-01-09 14:28:28 =ERROR REPORT====
+GET /comments/delete/comment-5 [post] 404 0ms2015-01-09 14:32:13 =ERROR REPORT====
+** Generic server <0.101.0> terminating 
+** Last message in was {delete,undefined}
+** When Server state == {state,connected,1,undefined,[{name,{local,boss_db_pool}},{worker_module,boss_db_controller},{size,5},{max_overflow,10},{adapter,mock},{cache_enable,false},{cache_prefix,db},{shards,[[{db_host,"localhost"},{db_adapter,mysql},{db_port,3306},{db_username,"root"},{db_password,"Q1p2m3g4"},{db_database,"post"},{db_shard_id,post},{db_shard_models,[comment]}]]},{is_master_node,true},{db_host,"localhost"},{db_port,1978}],boss_db_adapter_mock,undefined,undefined,[{boss_db_adapter_mysql,<0.106.0>,<0.106.0>}],{dict,1,16,16,8,80,48,{[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]},{{[],[],[],[],[[comment|0]],[],[],[],[],[],[],[],[],[],[],[]}}},false,60,db,0}
+** Reason for termination == 
+** {function_clause,[{boss_db_controller,infer_type_from_id,[undefined],[{file,"src/boss_db_controller.erl"},{line,418}]},{boss_db_controller,db_for_key,2,[{file,"src/boss_db_controller.erl"},{line,405}]},{boss_db_controller,handle_call,3,[{file,"src/boss_db_controller.erl"},{line,153}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,607}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,639}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,237}]}]}
+2015-01-09 14:32:13 =CRASH REPORT====
+  crasher:
+    initial call: boss_db_controller:init/1
+    pid: <0.101.0>
+    registered_name: []
+    exception exit: {{function_clause,[{boss_db_controller,infer_type_from_id,[undefined],[{file,"src/boss_db_controller.erl"},{line,418}]},{boss_db_controller,db_for_key,2,[{file,"src/boss_db_controller.erl"},{line,405}]},{boss_db_controller,handle_call,3,[{file,"src/boss_db_controller.erl"},{line,153}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,607}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,639}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,237}]}]},[{gen_server,terminate,7,[{file,"gen_server.erl"},{line,804}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,237}]}]}
+    ancestors: [<0.100.0>,boss_db_pool,boss_db_sup,boss_web,boss_sup,<0.93.0>]
+    messages: []
+    links: [<0.100.0>,<0.106.0>,<0.99.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 4185
+    stack_size: 27
+    reductions: 14527
+  neighbours:
+    neighbour: [{pid,<0.111.0>},{registered_name,[]},{initial_call,{erlang,apply,2}},{current_function,{mysql_recv,loop,1}},{ancestors,[]},{messages,[]},{links,[<0.106.0>,#Port<0.29784>]},{dictionary,[]},{trap_exit,false},{status,waiting},{heap_size,610},{stack_size,6},{reductions,5516}]
+    neighbour: [{pid,<0.106.0>},{registered_name,[]},{initial_call,{erlang,apply,2}},{current_function,{mysql_conn,loop,1}},{ancestors,[]},{messages,[]},{links,[<0.101.0>,<0.111.0>]},{dictionary,[]},{trap_exit,false},{status,waiting},{heap_size,1598},{stack_size,4},{reductions,11061}]
+2015-01-09 14:32:13 =SUPERVISOR REPORT====
+     Supervisor: {<0.100.0>,poolboy_sup}
+     Context:    child_terminated
+     Reason:     {function_clause,[{boss_db_controller,infer_type_from_id,[undefined],[{file,"src/boss_db_controller.erl"},{line,418}]},{boss_db_controller,db_for_key,2,[{file,"src/boss_db_controller.erl"},{line,405}]},{boss_db_controller,handle_call,3,[{file,"src/boss_db_controller.erl"},{line,153}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,607}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,639}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,237}]}]}
+     Offender:   [{pid,<0.101.0>},{name,boss_db_controller},{mfargs,{boss_db_controller,start_link,undefined}},{restart_type,temporary},{shutdown,5000},{child_type,worker}]
+
+2015-01-09 14:32:17 =ERROR REPORT====
+** Generic server <0.103.0> terminating 
+** Last message in was {delete,undefined}
+** When Server state == {state,connected,1,undefined,[{name,{local,boss_db_pool}},{worker_module,boss_db_controller},{size,5},{max_overflow,10},{adapter,mock},{cache_enable,false},{cache_prefix,db},{shards,[[{db_host,"localhost"},{db_adapter,mysql},{db_port,3306},{db_username,"root"},{db_password,"Q1p2m3g4"},{db_database,"post"},{db_shard_id,post},{db_shard_models,[comment]}]]},{is_master_node,true},{db_host,"localhost"},{db_port,1978}],boss_db_adapter_mock,undefined,undefined,[{boss_db_adapter_mysql,<0.108.0>,<0.108.0>}],{dict,1,16,16,8,80,48,{[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]},{{[],[],[],[],[[comment|0]],[],[],[],[],[],[],[],[],[],[],[]}}},false,60,db,0}
+** Reason for termination == 
+** {function_clause,[{boss_db_controller,infer_type_from_id,[undefined],[{file,"src/boss_db_controller.erl"},{line,418}]},{boss_db_controller,db_for_key,2,[{file,"src/boss_db_controller.erl"},{line,405}]},{boss_db_controller,handle_call,3,[{file,"src/boss_db_controller.erl"},{line,153}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,607}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,639}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,237}]}]}
+2015-01-09 14:32:17 =CRASH REPORT====
+  crasher:
+    initial call: boss_db_controller:init/1
+    pid: <0.103.0>
+    registered_name: []
+    exception exit: {{function_clause,[{boss_db_controller,infer_type_from_id,[undefined],[{file,"src/boss_db_controller.erl"},{line,418}]},{boss_db_controller,db_for_key,2,[{file,"src/boss_db_controller.erl"},{line,405}]},{boss_db_controller,handle_call,3,[{file,"src/boss_db_controller.erl"},{line,153}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,607}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,639}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,237}]}]},[{gen_server,terminate,7,[{file,"gen_server.erl"},{line,804}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,237}]}]}
+    ancestors: [<0.100.0>,boss_db_pool,boss_db_sup,boss_web,boss_sup,<0.93.0>]
+    messages: []
+    links: [<0.100.0>,<0.108.0>,<0.99.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 1598
+    stack_size: 27
+    reductions: 14763
+  neighbours:
+    neighbour: [{pid,<0.113.0>},{registered_name,[]},{initial_call,{erlang,apply,2}},{current_function,{mysql_recv,loop,1}},{ancestors,[]},{messages,[]},{links,[<0.108.0>,#Port<0.29782>]},{dictionary,[]},{trap_exit,false},{status,waiting},{heap_size,610},{stack_size,6},{reductions,8856}]
+    neighbour: [{pid,<0.108.0>},{registered_name,[]},{initial_call,{erlang,apply,2}},{current_function,{mysql_conn,loop,1}},{ancestors,[]},{messages,[]},{links,[<0.103.0>,<0.113.0>]},{dictionary,[]},{trap_exit,false},{status,waiting},{heap_size,2586},{stack_size,4},{reductions,11863}]
+2015-01-09 14:32:17 =SUPERVISOR REPORT====
+     Supervisor: {<0.100.0>,poolboy_sup}
+     Context:    child_terminated
+     Reason:     {function_clause,[{boss_db_controller,infer_type_from_id,[undefined],[{file,"src/boss_db_controller.erl"},{line,418}]},{boss_db_controller,db_for_key,2,[{file,"src/boss_db_controller.erl"},{line,405}]},{boss_db_controller,handle_call,3,[{file,"src/boss_db_controller.erl"},{line,153}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,607}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,639}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,237}]}]}
+     Offender:   [{pid,<0.103.0>},{name,boss_db_controller},{mfargs,{boss_db_controller,start_link,undefined}},{restart_type,temporary},{shutdown,5000},{child_type,worker}]
+
+2015-01-09 15:08:39 =ERROR REPORT====
+GET /comments/edit/comment-3 [post] 404 0ms2015-01-09 15:08:51 =ERROR REPORT====
+GET /comments/edit/comment-3 [post] 404 0ms2015-01-09 22:16:42 =ERROR REPORT====
+GET /comments/pull/1420816601752662 [post] 404 0ms2015-01-09 22:16:56 =ERROR REPORT====
+GET /comments/pull/1420816616406387 [post] 404 0ms2015-01-09 22:17:28 =ERROR REPORT====
+GET /comments/pull/1420816648267135 [post] 404 0ms2015-01-09 22:17:31 =ERROR REPORT====
+GET /comments/pull/1420816651803669 [post] 404 0ms2015-01-09 22:17:33 =ERROR REPORT====
+GET /comments/pull/1420816653038395 [post] 404 0ms2015-01-09 22:18:10 =ERROR REPORT====
+GET /comments/pull/1420816690578027 [post] 404 0ms2015-01-09 22:21:47 =ERROR REPORT====
+Ranch listener boss_http_listener had connection process started with cowboy_protocol:start_link/4 at <0.374.0> exit with reason: killed
+2015-01-09 22:49:12 =SUPERVISOR REPORT====
+     Supervisor: {<0.122.0>,poolboy_sup}
+     Context:    shutdown_error
+     Reason:     shutdown
+     Offender:   [{nb_children,1},{name,boss_session_controller},{mfargs,{boss_session_controller,start_link,[[{name,{local,boss_session_pool}},{worker_module,boss_session_controller},{size,20},{max_overflow,40},{adapter,boss_session_adapter_mock},{session_exp_time,525600},{session_key,"_boss_session"}]]}},{restart_type,temporary},{shutdown,5000},{child_type,worker}]
+

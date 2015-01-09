@@ -1,0 +1,5 @@
+create table comments(id serial unique not null, primary key (id), title varchar(200), content text, created timestamp);
+
+Comment = comment:new(id, "Title", "Content").
+Comment:save().
+Comments = boss_db:find(comment, [])

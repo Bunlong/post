@@ -1,0 +1,12 @@
+{% block body %}
+  {% if comment %}
+    <form method="post">
+      Title:
+      <input type="text" id="title" name="title" value="{{comment.title}}">
+      <br/>
+      Content:
+      <textarea id="content" name="content">{{comment.content}}</textarea>
+      <input type="submit">
+    </form>
+  {% endif %}
+{% endblock %}

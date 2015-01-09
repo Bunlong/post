@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title>{% block title %}{% endblock %}</title>
+    <script src="/static/js/jquery-1.9.1.js"></script>
+    <script>
+      function listen_for_events(timestamp) {
+        $.ajax("/comments/pull/" + timestamp, { success:
+          function(data, code, xhr) {
+            for (var i = 0; i < data.comments.length; i++) {
+              var msg = data.comments[i].title;
+              var comment = "";
+              comment += "<tr>";
+              comment += "<td>" + msg + "</td>";
+              comment += "</tr>";
+              $("#comment-list").append(comment);
+            }
+            listen_for_events(data.timestamp);
+          } 
+        });
+      }
+
+      $(document).ready(function() {
+        listen_for_events({{ timestamp }});
+      });
+    </script>
+  </head>
+  <body>
+    {% block body %}
+      <table id="comment-list" border="1" style="width: 350px;">
+        <tr>
+          <th>Title</th>
+          <th>Content</th>
+          <th>Action</th>
+        </tr>
+        {% if comments %}
+          {% for comment in comments %}
+            <tr>
+              <td>{{ comment.title }}</td>
+              <td>{{ comment.content }}</td>
+              <td>
+                <a href="{% url action="delete" id=comment.id %}">Delete</a>
+                <a href="{% url action="edit" id=comment.id %}">Edit</a>
+              </td>
+            </tr>
+          {% endfor %}
+        {% endif %}
+      </table>
+    {% endblock %}
+    <p><a href="{% url action="create" %}">New Comment</a></p>
+  </body>
+</html>
